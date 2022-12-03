@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* *Primary */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient(to left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* Light Theme */
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Other Var Style */
+  --padding: 3rem 1.5rem;
+}
+
+.darkmode {
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  align-items: flex-start !important;
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  justify-content: stretch !important;
+  background-color: var(--Very-Light-Grayish-Blue);
+  /* background-image: url(design/mobile-design-light.jpg);
+  background-size: cover; */
+}
+.display-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  max-width: 100%;
+  display: block;
+}
+#cards {
+  width: 100%;
+  position: relative;
+  opacity: 1;
+}
+.card-bg-img img {
+  width: 100%;
+  object-fit: cover;
+}
+.card-head {
+  width: 100%;
+  padding: var(--padding);
+  top: 0;
+  left: 0;
+  position: absolute;
+  justify-content: space-between;
+}
+.big-title {
+  letter-spacing: 5px;
+  color: var(--Very-Light-Gray);
+  font-size: 1.8em;
+}
+.darkmode-lightmode-icon {
+  max-width: 2rem;
+}
+.card-contents {
+  --padding: 0 1.5rem;
+  width: 100%;
+  top: 6.8rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  padding: var(--padding);
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+.show-error-box {
+  position: absolute;
+  bottom: -2rem;
+  left: 0;
+  right: 0;
+  padding: 0.6rem;
+  background-color: #ff8f8f;
+  justify-content: flex-start;
+  column-gap: 1rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: 500ms;
+}
+.error-information-text {
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.5;
+  transform: scale(1);
+}
+.show-err {
+  opacity: 1;
+  transform: scale(1);
+}
+.boxInput {
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.input {
+  --padding: 1.2rem 3rem 1.2rem 3.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  padding: var(--padding);
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: bold;
+  font-size: 1rem;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.input::placeholder {
+  color: var(--Dark-Grayish-Blue);
+}
+.add-todo-input {
+  --padding: 1.2rem 1rem 1.2rem 3.5rem;
+  border-radius: 0.3rem 0 0 0.3rem !important;
+  padding: var(--padding);
+}
+.add-todo-button {
+  margin-left: auto;
+  --padding: 1.2rem 1.5rem;
+  border: none;
+  outline: none;
+  padding: var(--padding);
+  border-radius: 0 0.3rem 0.3rem 0;
+  border-left: 2px solid var(--Dark-Grayish-Blue);
+  cursor: pointer;
+}
+.check-icon {
+  top: 0;
+  left: 1.1rem;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  padding: 0.6rem;
+  margin: auto;
+  border-radius: 50%;
+  border: 1px solid var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+}
+.close-icon {
+  --padding: 0.6rem;
+  max-width: 14px;
+  position: absolute;
+  top: 0;
+  right: 1.1rem;
+  bottom: 0;
+  padding: var(--padding);
+  margin-right: auto;
+}
+.icon-checked {
+  background: var(--Check-Background);
+  transition: 400ms;
+}
+.check-icon.icon-checked ~ h2 {
+  color: var(--Dark-Grayish-Blue);
+  font-weight: normal;
+  text-decoration: line-through;
+}
+.todo-complete {
+  text-decoration: line-through;
+}
+.todo-container-wrapper {
+  /* Use This for FrontEndChallenge */
+  /* margin-top: 0.9rem; */
+  margin-top: 3rem;
+}
+.todo-container {
+  margin-bottom: 1rem;
+  border-radius: 0.6rem;
+  position: relative;
+}
+/* .todo-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--Dark-Grayish-Blue);
+} */
+
+@media (min-width: 576px) {
+  .card-contents {
+    width: 70%;
+    margin: auto;
+  }
+}

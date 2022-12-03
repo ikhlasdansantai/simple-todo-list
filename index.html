@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Frontend Mentor | Todo app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body class="display-f">
+    <!-- Todo -->
+    <div class="section" id="cards">
+      <figure class="card-bg-img">
+        <img src="images/bg-mobile-light.jpg" alt="" class="img" />
+      </figure>
+      <div class="card-head display-f">
+        <h1 class="big-title">TODO</h1>
+        <div class="darkmode-lightmode-icon">
+          <img src="images/icon-moon.svg" alt="" srcset="" />
+        </div>
+      </div>
+      <div class="card-contents">
+        <form class="add-todo container">
+          <figure class="check-icon display-f">
+            <img src="images/icon-check.svg" alt="" />
+          </figure>
+          <div class="boxInput display-f">
+            <input type="text" class="add-todo-input input" placeholder="Create a new todo..." minlength="2" required />
+            <button type="submit" class="add-todo-button">Submmit!</button>
+          </div>
+          <div class="show-error-box display-f">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <p class="error-information-text">Tidak boleh mengandung number</p>
+          </div>
+        </form>
+
+        <div class="todo-container-wrapper">
+          
+          <!-- 
+             ===================
+            *New Todos Goes Here
+             =================== -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Add dynamic number -->
+    <!-- items left All Active Completed Clear Completed Drag and drop to reorder list -->
+
+    <!-- <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.</div> -->
+    <script src="test.js"></script>
+  </body>
+</html>

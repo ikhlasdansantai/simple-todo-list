@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form">
+      <div class="boxInput">
+        <label for="username">Username:</label>
+        <input type="text" class="username" id="username" required />
+      </div>
+      <div class="boxInput">
+        <label for="age">Age:</label>
+        <input type="number" class="age" id="age" required />
+      </div>
+      <div class="boxInput">
+        <label for="geng-name">Geng:</label>
+        <select name="geng-name" id="geng-name" required>
+          <option value="Sannoh Renggokai">Sannoh Renggokai</option>
+          <option value="White Rascals">White Rascals</option>
+          <option value="Oya KouKou">Oya KouKou</option>
+          <option value="Rude Boys">Rude Boys</option>
+          <option value="Daruma Ika">Daruma Ika</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Tambah Anggota</button>
+    </form>
+
+    <!-- Your Contents Here -->
+    <div class="content-wrapper">
+      <h1>Hello</h1>
+    </div>
+
+    <script>
+      let anggotaGeng = [];
+
+      const form = document.getElementsByClassName("form")[0];
+
+      window.addEventListener("DOMContentLoaded", (e) => {
+        e.preventDefault();
+
+        const button = document.getElementsByClassName("btn")[0];
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // form.reset();
+
+          let container = document.getElementsByClassName("content-wrapper")[0];
+
+          let deparseObj = JSON.parse(localStorage.getItem("OBJ"));
+
+          let createNameElement = document.createElement("p");
+          createNameElement.innerText = `Nama: ${deparseObj.nama}`;
+
+          container.appendChild(createNameElement);
+          addObj();
+          console.log(anggotaGeng);
+        });
+      });
+
+      const createObject = function (nama, age, geng) {
+        return {
+          nama,
+          age,
+          geng,
+        };
+      };
+
+      function addObj() {
+        let inputUsername = document.getElementById("username").value;
+        let inputAge = document.getElementById("age").value;
+        let gengNames = document.getElementById("geng-name").value;
+
+        let inputObj = new createObject(inputUsername, inputAge, gengNames);
+
+        makeObj(inputObj);
+      }
+
+      function makeObj(inputObj) {
+        let parseObjNya = JSON.stringify(inputObj);
+        localStorage.setItem("OBJ", parseObjNya);
+
+        let deparseObj = JSON.parse(localStorage.getItem("OBJ"));
+
+        console.log(`Object Parse: ${deparseObj.nama}`);
+
+        // let createNameElement = document.createElement("p");
+        // createNameElement.innerText = `Nama: ${deparseObj.nama}`;
+
+        // let createAgeElement = document.createElement("p");
+        // createAgeElement.innerText = `Age: ${deparseObj.age}`;
+
+        // let createGengNameElement = document.createElement("p");
+        // createGengNameElement.innerText = `Geng: ${deparseObj.geng} `;
+
+        // let container = document.getElementsByClassName("content-wrapper")[0];
+
+        // container.appendChild(createNameElement);
+        // container.appendChild(createAgeElement);
+        // container.appendChild(createGengNameElement);
+
+        anggotaGeng.push(inputObj);
+
+        // return container;
+      }
+    </script>
+  </body>
+</html>
