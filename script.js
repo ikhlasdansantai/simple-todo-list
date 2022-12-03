@@ -85,9 +85,9 @@ function makeTodo(todoObject) {
 }
 
 textErrorMessageObj = {
-  "value kosong": "Value tidak boleh kosong",
-  sqlInjection: "tidak boleh mengandung karakter spesial >:(",
-  number: "tidak boleh hanya menggunakan number",
+  "value kosong": "Value cannot be empty",
+  sqlInjection: "value cannot be a special character >:(",
+  number: "value cannot be a number only",
 };
 
 function showError(error, todoObj, errorMessage) {
