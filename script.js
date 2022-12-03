@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
     addTodo();
 
-    console.log(todos);
+    // console.log(todos);
     addTodoInput.reset();
   });
 });
@@ -51,7 +51,7 @@ function makeTodo(todoObject) {
   createTodoTitle.appendChild(todoTitle);
   createTodoTitle.classList.add("input", "todo-uncompleted");
 
-  console.log(`Isi Object dari MakeTodo: ${todoObject["task"]}`);
+  // console.log(`Isi Object dari MakeTodo: ${todoObject["task"]}`);
 
   // *Create Check Icon
   const createCheckIcon = document.createElement("figure");
@@ -93,7 +93,7 @@ textErrorMessageObj = {
 function showError(error, todoObj, errorMessage) {
   let errorElement = document.getElementsByClassName("show-error-box")[0];
   let errorText = document.getElementsByClassName("error-information-text")[0];
-  console.log(todoObj);
+  // console.log(todoObj);
 
   let isNanValue = isNaN(error);
 
@@ -104,14 +104,14 @@ function showError(error, todoObj, errorMessage) {
 
   if (error === undefined || error === null || error.length == 0) {
     errorMessage = textErrorMessageObj["value kosong"];
-    console.log(textErrorMessageObj["value kosong"]);
+    // console.log(textErrorMessageObj["value kosong"]);
   } else if (typeof error === "number") {
     errorMessage = textErrorMessageObj.number;
-    console.log(errorMessage);
+    // console.log(errorMessage);
     return errorMessage;
   } else if (isNanValue == false) {
     errorMessage = textErrorMessageObj.number;
-    console.log("Jangan number babe");
+    // console.log("Jangan number babe");
   } else {
     makeTodo(todoObj);
     todos.push(todoObj);
